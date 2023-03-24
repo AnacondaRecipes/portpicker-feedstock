@@ -39,8 +39,8 @@ test:
     - pip check
 
 about:
-  home: https://pypi.python.org/pypi/portpicker
-  license: Apache License 2.0
+  home: https://pypi.org/project/portpicker/
+  license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
   summary: A library to choose unique available network ports.
@@ -50,6 +50,7 @@ about:
     for use from unittests or for test harnesses that launch
     local servers.
   dev_url: https://github.com/google/python_portpicker
+  doc_url: https://github.com/google/python_portpicker
 
 extra:
   recipe-maintainers:
