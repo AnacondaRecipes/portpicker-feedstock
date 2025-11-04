@@ -1,5 +1,5 @@
 {% set name = "portpicker" %}
-{% set version = "1.5.2" %}
+{% set version = "1.6.0" %}
 {% set file_ext = "tar.gz" %}
 
 package:
@@ -8,21 +8,20 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.{{ file_ext }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
-  sha256: "c55683ad725f5c00a41bc7db0225223e8be024b1fa564d039ed3390e4fd48fb3"
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
+  sha256: bd507fd6f96f65ee02781f2e674e9dc6c99bbfa6e3c39992e3916204c9d431fa
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vvv
-  skip: true  # [py<37]
+  skip: true  # [py<36]
 
 requirements:
   host:
     - python
-    - setuptools
+    - setuptools >=40.9.0
     - pip
     - wheel
-
   run:
     - python
     - psutil
